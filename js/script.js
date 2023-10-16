@@ -3,18 +3,7 @@ function printMessage(msg){
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
-let randomFraction = Math.random();
 
-printMessage('Wylosowany ułamek to: ' + randomFraction);
-
-let calculation = randomFraction * 3 + 1;
-
-printMessage('Ułamek pomnożony przez 3 i powiększony o 1: ' + calculation);
-
-let roundNumber = Math.floor(calculation);
-
-printMessage('Liczba po zaokrągleniu w dół to: ' + roundNumber);
-/**========================================================================*/
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 
 console.log('Gracz wpisał: ' + playerInput);
@@ -47,4 +36,26 @@ if(randomNumber == 1){
 	computerMove = 'nozyce'
 }
 
-printMessage('Ruch komoutera to: ' + computerMove);
+printMessage('Ruch komputera to: ' + computerMove);
+/**==========================================================================*/
+if( computerMove == 'kamień' && playerMove == 'papier'){
+	printMessage('Ty wygrywasz!');
+  }else if (computerMove == 'kamień' && playerMove == 'nozyce'){
+	printMessage('Ty przegrywasz!') 
+  }else if (computerMove  == 'kamień' && playerMove == 'kamień' ){
+		printMessage ('Remis!')
+	}else if (computerMove == 'papier' && playerMove ==  'kamień'){
+		printMessage ('Ty przegrywasz!')
+	}else if (computerMove == 'papier' && playerMove == 'papier'){
+		printMessage ('Remis!')
+	}else if (computerMove == 'papier' && playerMove == 'nozyce'){
+		printMessage ('Ty wygrywasz!')
+	}else if (computerMove == 'nozyce' && playerMove == 'kamień'){
+		printMessage ('Ty wygrywasz!')
+	}else if (computerMove == 'nozyce' && playerMove == 'papier'){
+		printMessage ('Ty przegrywasz!')
+	}else if (computerMove == 'nozyce' && playerMove == 'nozyce'){
+		printMessage ('Remis!')
+	}else if (playerMove == 'nieznany ruch'){
+		printMessage ('Naucz się grać')
+	}
