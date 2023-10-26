@@ -14,19 +14,19 @@ function getMoveName(argMoveId){
 		return 'nie umiesz grać';
 	}
 }
-function displayResult(argComputerMove, argPlayerMove){
-	printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
-	if (argComputerMove  == argPlayerMove){
-		printMessage('Remis');
-	}else if(argComputerMove == 'kamień' && argPlayerMove == 'papier') ||
-			(argComputerMove == 'papier' && argPlayerMove == 'nozyce') ||
-			(argComputerMove == 'nozyce'  && argPlayerMove == 'kamień'){
-		printMessage('Ty wygrywasz!');
-	}else if (argComputerMove == 'kamień' && argPlayerMove == 'nozyce') ||
-			 (argComputerMove == 'papier' && argPlayerMove == 'kamień') ||
-			 (argComputerMove == 'nozyce' && argPlayerMove == 'papier'){
-		printMessage ('Ty przegrywasz');
-	} 
+function displayResult(argComputerMove, argPlayerMove) {
+    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+    if (argComputerMove == argPlayerMove) {
+        printMessage('Remis');
+    } else if (
+        (argComputerMove == 'kamień' && argPlayerMove == 'papier') ||
+        (argComputerMove == 'papier' && argPlayerMove == 'nozyce') ||
+        (argComputerMove == 'nozyce' && argPlayerMove == 'kamień')
+    ) {
+        printMessage('Ty wygrywasz!');
+    } else {
+        printMessage('Ty przegrywasz!');
+    }
 }
 let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 console.log('Gracz wpisał: ' + playerInput);
