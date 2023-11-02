@@ -1,13 +1,13 @@
 {
-	function playGame(playerInput){
+	const playGame = function (playerInput){
 		clearMessages();
 
-	function printMessage(msg){
-		let div = document.createElement('div');
-		div.innerHTML = msg;
-		document.getElementById('messages').appendChild(div);
+		const printMessage = function (msg){
+			const div = document.createElement('div');
+			div.innerHTML = msg;
+			document.getElementById('messages').appendChild(div);
 	}
-	function getMoveName(argMoveId){
+	const getMoveName =function (argMoveId){
 		if(argMoveId == 1){
 		return 'kamień';
 		} else if (argMoveId == 2){
@@ -18,7 +18,7 @@
 			return 'nie umiesz grać';
 		}
 	}
-	function displayResult(argComputerMove, argPlayerMove) {
+	const displayResult = function (argComputerMove, argPlayerMove) {
 		printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 		if (argComputerMove == argPlayerMove) {
 			printMessage('Remis');
@@ -35,13 +35,13 @@
 
 	//**let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 	//console.log('Gracz wpisał: ' + playerInput);
-	const playerMove =getMoveName(playerInput)
+	const playerMove =getMoveName(playerInput);
 	//printMessage('Twój ruch to: ' + playerMove);
+	const computerMove = getMoveName(randomNumber);
+	//printMessage('Ruch komputera to: ' + computerMove);
 	const randomNumber = Math.floor(Math.random() * 3 + 1);
 	//console.log('Wylosowana liczba to: ' + randomNumber);
-	const computerMove = getMoveName(randomNumber)
-	//printMessage('Ruch komputera to: ' + computerMove);
-	displayResult(computerMove, playerMove)	
+	displayResult(computerMove, playerMove)	;
 }
 document.getElementById('play-rock').addEventListener('click', function(){
   playGame(1);
