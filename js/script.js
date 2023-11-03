@@ -1,4 +1,6 @@
-{
+{let playerWins = 0;
+let computerWins = 0;
+
 	const playGame = function (playerInput){
 		clearMessages();
 
@@ -28,18 +30,22 @@
 			(argComputerMove == 'nozyce' && argPlayerMove == 'kamień')
 		) {
 			printMessage('Ty wygrywasz!');
+			playerWins++;
 		} else {
 			printMessage('Ty przegrywasz!');
+			computerWins++;
 		}
+		document.getElementById('result').innerHTML = playerWins + ' - ' + computerWins;
 	}
 
 	//**let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
 	//console.log('Gracz wpisał: ' + playerInput);
+	const randomNumber = Math.floor(Math.random() * 3 + 1);
 	const playerMove =getMoveName(playerInput);
 	//printMessage('Twój ruch to: ' + playerMove);
 	const computerMove = getMoveName(randomNumber);
 	//printMessage('Ruch komputera to: ' + computerMove);
-	const randomNumber = Math.floor(Math.random() * 3 + 1);
+	
 	//console.log('Wylosowana liczba to: ' + randomNumber);
 	displayResult(computerMove, playerMove)	;
 }
